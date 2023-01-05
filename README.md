@@ -3,6 +3,8 @@
 #### replace the domain serviceName and uuid
 ```
 apt install nginx socat -y
+
+# run nginx -V and make sure nginx version > 1.13.10
 systemctl stop nginx
 
 # install xray
