@@ -1,0 +1,31 @@
+{
+   "log":{
+      "loglevel":"error"
+   },
+   "inbounds":[
+      {
+         "listen":"/dev/shm/grpc.sock,666",
+         "protocol":"vless",
+         "settings":{
+            "clients":[
+               {
+                  "id":""
+               }
+            ],
+            "decryption":"none"
+         },
+         "streamSettings":{
+            "network":"grpc",
+            "grpcSettings":{
+               "serviceName":"whatever"
+            }
+         }
+      }
+   ],
+   "outbounds":[
+      {
+         "tag":"direct",
+         "protocol":"freedom"
+      }
+   ]
+}
