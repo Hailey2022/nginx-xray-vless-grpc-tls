@@ -14,6 +14,8 @@ curl https://get.acme.sh | sh
 
 # make sure tcp port 80 is opened or use zerossl
 ~/.acme.sh/acme.sh --register-account -m whatever@gmail.com
+
+# replace yourdomain.com
 ~/.acme.sh/acme.sh --issue -d yourdomain.com --standalone
 ~/.acme.sh/acme.sh --installcert -d yourdomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
 
