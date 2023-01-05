@@ -19,7 +19,7 @@ curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --issue --standalone -d yourdomain.com
 ~/.acme.sh/acme.sh --installcert --key-file /root/private.key --fullchain-file /root/cert.crt -d yourdomain.com
 
-# copy xray.json to /usr/local/etc/xray/config.json and replace the domain serviceName and uuid
+# copy xray.json to /usr/local/etc/xray/config.json and replace the serviceName and uuid
 vim /usr/local/etc/xray/config.json
 systemctl restart xray
 
