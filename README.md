@@ -1,6 +1,5 @@
 # nginx-xray-vless-grpc-tls
 
-#### replace the domain serviceName and uuid
 ```
 apt install nginx socat -y
 
@@ -18,13 +17,17 @@ curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --issue -d yourdomain.com --standalone
 ~/.acme.sh/acme.sh --installcert -d yourdomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
 
-# copy nginx.conf to /etc/nginx/sites-enabled/default
-vim /etc/nginx/sites-enabled/default
-systemctl restart nginx
-
-# copy xray.json to /usr/local/etc/xray/config.json
+# copy xray.json to /usr/local/etc/xray/config.json and replace the domain serviceName and uuid
 vim /usr/local/etc/xray/config.json
 systemctl restart xray
+
+# copy nginx.conf to /etc/nginx/sites-enabled/default
+vim /etc/nginx/sites-enabled/default
+
+# add grpc.conf to /etc/nginx/nginx.conf
+vim /etc/nginx/nginx.conf
+
+systemctl restart nginx
 
 # make a fake website /usr/share/nginx/html
 ```
