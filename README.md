@@ -15,9 +15,9 @@ curl https://get.acme.sh | sh
 # make sure tcp port 80 is opened or use zerossl
 ~/.acme.sh/acme.sh --register-account -m whatever@gmail.com
 
-# replace yourdomain.com
-~/.acme.sh/acme.sh --issue -d yourdomain.com --standalone
-~/.acme.sh/acme.sh --installcert -d yourdomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
+# replace yourdomain.com and you can add --server letsencrypt if you don't like zerossl
+~/.acme.sh/acme.sh --issue --standalone -d yourdomain.com
+~/.acme.sh/acme.sh --installcert --key-file /root/private.key --fullchain-file /root/cert.crt -d yourdomain.com
 
 # copy xray.json to /usr/local/etc/xray/config.json and replace the domain serviceName and uuid
 vim /usr/local/etc/xray/config.json
